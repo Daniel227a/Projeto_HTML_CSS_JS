@@ -34,6 +34,7 @@ btn.addEventListener("click", function (e) {
     }
   }
 });
+/*
 $("#_wifi").click(function () {
   if ($(this).is(":checked")) {
     $(this).attr("checked", true);
@@ -56,3 +57,4 @@ $("#_estaciona").click(function () {
     $(this).attr("checked", false);
   }
 });
+*/

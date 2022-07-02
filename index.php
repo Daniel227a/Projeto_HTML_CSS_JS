@@ -15,7 +15,7 @@
 
     switch(@$_REQUEST["page"]){
 
-
+        
         case 'cadastro_evento':
             include("cadastro_evento.php");
             break;
@@ -23,6 +23,7 @@
         case 'salvar':
             
             include ("teste.php");
+            include("salvar-evento.php");
             break;
 
             

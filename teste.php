@@ -14,6 +14,7 @@
 
 
     <?php
+     include("config.php");
      $nome=$_POST["nome"];
      $descricao=$_POST["descriçao"];
      $inicio=$_POST["data_inicio"];
