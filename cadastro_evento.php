@@ -13,7 +13,7 @@
 <body>
     <h2>novo evento </h2>
 
-    <form action="?page=salvar" method="POST" id="form">
+    <form action="?page=salvar" enctype="multipart/form-data" method="POST" id="form">
 
         <input type="hidden" name="acao" value="cadastrar">
         <div>
@@ -46,7 +46,7 @@
         </div>
         <div>
             img
-            <input type="file" accept="image/*" id="imgT" name="img">
+            <input type="file" accept="image/*" id="imgT" name="arquivo">
             <br>
             <img id="view-img" src="default.jpg" width="18%" height="20%">
         </div>
@@ -54,7 +54,7 @@
     </form>
 </body>
 <script>
-$("#imgT").change(function() {
+$("#imgT").change(function() { //mostar miniatura anntes do envio 
     if (this.files && this.files[0]) {
         var reader = new FileReader();
 
@@ -70,7 +70,7 @@ $("#imgT").change(function() {
 $("#form").submit(function() {
     if ($("#_nome").val() == null || $("_#nome").val() == "") {
         alert('campo vazio');
-        print("AAAAA")
+
         return false;
     }
 });
