@@ -38,7 +38,17 @@ if($estaciona==true){
  $res=$conn->query($sql);
  if($res==true){
     print("feito");
+
+ }else{
+
+
+    print("Erro ");
+    include("cadastro_evento");
+    
  }
+
+ 
+
 
 
 

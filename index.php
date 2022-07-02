@@ -11,8 +11,9 @@
 <body>
     <a href="?page=cadastro_evento">Novo usuario</a>
     <a href="?page=teste">teste</a>
-    <?php
 
+    <?php
+    include("exibir.php");
     switch(@$_REQUEST["page"]){
 
         
