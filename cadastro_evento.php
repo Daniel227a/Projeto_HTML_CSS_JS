@@ -34,15 +34,15 @@
         </div>
         <div>
             wifi
-            <input type="checkbox" name="wifi" id="_wifi">
+            <input type="checkbox" name="wifi" id="_wifi" value=1>
         </div>
         <div>
             bebida
-            <input type="checkbox" name="bebida" id="_bebida">
+            <input type="checkbox" name="bebida" id="_bebida" value=1>
         </div>
         <div>
             estacionamento
-            <input type="checkbox" name="estacionamento" id="_estaciona">
+            <input type="checkbox" name="estacionamento" id="_estaciona" value=1>
         </div>
         <div>
             img
