@@ -41,7 +41,18 @@ $("#_wifi").click(function () {
     $(this).attr("checked", false);
   }
 });
+
 $("#_bebida").click(function () {
-  if ($(this).is(":checked")) $(this).attr("checked", true);
-  else $(this).removeAttr("checked");
+  if ($(this).is(":checked")) {
+    $(this).attr("checked", true);
+  } else {
+    $(this).attr("checked", false);
+  }
+});
+$("#_estaciona").click(function () {
+  if ($(this).is(":checked")) {
+    $(this).attr("checked", true);
+  } else {
+    $(this).attr("checked", false);
+  }
 });
