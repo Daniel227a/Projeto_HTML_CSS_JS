@@ -7,6 +7,7 @@ $fim=$_POST["data_fim"];
 $wifi=$_POST["wifi"];
 $bebida=$_POST["bebida"];
 $estaciona =$_POST["estacionamento"];
+$tipo=$_POST["tipo"];
 if(isset($_FILES['arquivo'])){
     $arquivo=$_FILES['arquivo'];
     if($arquivo['error']){
@@ -72,9 +73,35 @@ if($estaciona==true){
     $estaciona=0;
 }
 
- $sql = "INSERT INTO evento(nome,descriçao,inicio,fim,wifi,bebida,estacionamento,id_img)
- VALUES('$nome','$descricao','$inicio','$fim','$wifi','$bebida','$estaciona','$id_img')";
- $res=$conn->query($sql);
+$sql="SELECT * FROM tipos WHERE tipo ='$tipo'";
+$res=$conn->query($sql);
+if($res->num_rows ==0){
+    
+    $sql="INSERT INTO  tipos(tipo)value('$tipo')";
+    $res=$conn->query($sql);
+    $sql="SELECT * FROM tipos WHERE tipo ='$tipo'";
+    $res=$conn->query($sql);
+    while($row_nome = mysqli_fetch_assoc($res)){
+        $id_tipo=$row_nome["id"];
+    }
+    $sql = "INSERT INTO evento(nome,descriçao,inicio,fim,wifi,bebida,estacionamento,id_img,id_tipo)
+    VALUES('$nome','$descricao','$inicio','$fim','$wifi','$bebida','$estaciona','$id_img','$id_tipo')";
+    $res=$conn->query($sql);
+
+}else{
+   
+    while($row_nome = mysqli_fetch_assoc($res)){
+        $id_tipo=$row_nome["id"];
+    }
+    
+    $sql = "INSERT INTO evento(nome,descriçao,inicio,fim,wifi,bebida,estacionamento,id_img,id_tipo)
+    VALUES('$nome','$descricao','$inicio','$fim','$wifi','$bebida','$estaciona','$id_img','$id_tipo')";
+    $res=$conn->query($sql);
+
+}
+
+
+
  if($res==true){
     print("\nevento criado\n");
   //  include("exibir.php");

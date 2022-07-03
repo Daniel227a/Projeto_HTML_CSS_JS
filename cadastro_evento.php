@@ -29,6 +29,10 @@
             <input type="date" name="data_inicio" id="_data_inicio">
         </div>
         <div>
+            Tipo do evennto
+            <input type="text" name="tipo" id="_tipo">
+        </div>
+        <div>
             data de fim
             <input type="date" name="data_fim" id="_data_fim">
         </div>
