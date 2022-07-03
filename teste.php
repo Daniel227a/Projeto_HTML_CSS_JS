@@ -22,7 +22,7 @@
      $wifi=$_POST["wifi"];
      $bebida=$_POST["bebida"];
      $estaciona =$_POST["estacionamento"];
-     $img=$_POST["img"];
+    
      echo'<p>'.$nome."</p>\n";
     
      echo'<p>'.$descricao."</p>\n";
@@ -32,7 +32,6 @@
      
      echo'<p > bebida :'.$bebida."</p>\n";
      echo'<p > estacionamento:'.$estaciona."</p>\n";
-     print($img);
     
     ?>
 
