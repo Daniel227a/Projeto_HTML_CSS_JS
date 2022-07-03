@@ -13,7 +13,7 @@
     <a href="?page=teste">teste</a>
 
     <?php
-  //  include("exibir.php");
+    include("exibir.php");
     switch(@$_REQUEST["page"]){
 
         
