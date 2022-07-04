@@ -11,37 +11,36 @@
 </head>
 
 <body>
-
     <?php
 
-include("config.php");
+            include("config.php");
 
-$sql = "SELECT * FROM evento";
-$res=$conn->query($sql);
- if($res!=true){
-   print("ERRO");
+            $sql = "SELECT * FROM evento";
+            $res=$conn->query($sql);
+            if($res!=true){
+                print("ERRO");
 
- }
+            }
 
-while($row_nome = mysqli_fetch_assoc($res)){
-    echo"<br>";
-    echo"<br> nome: ".$row_nome["nome"];
-    echo"<br> nome: ".$row_nome["descriçao"];
-    echo"<br> nome: ".$row_nome["inicio"];
-    $id_img=$row_nome["id_img"];
-    $id_tipo=$row_nome["id_tipo"];
-    $sql1="SELECT path FROM arquivos WHERE id='$id_img'";
-    $res1=$conn->query($sql1);
-    while($row_img = mysqli_fetch_assoc($res1)){
-        $temp=$row_img["path"];
-        echo"<p>arquivo enviado</p>,<a href=\"$temp\"> mostrar imagem</a></p>";
-        echo '<img  width="18%" height="20%" src="'.$row_img['path'].'">';
-     
-       
-    }
-}
+            while($row_nome = mysqli_fetch_assoc($res)){
+                echo"<br>";
+                echo"<br> nome: ".$row_nome["nome"];
+                echo"<br> nome: ".$row_nome["descriçao"];
+                echo"<br> nome: ".$row_nome["inicio"];
+                $id_img=$row_nome["id_img"];
+                $id_tipo=$row_nome["id_tipo"];
+                $sql1="SELECT path FROM arquivos WHERE id='$id_img'";
+                $res1=$conn->query($sql1);
+                while($row_img = mysqli_fetch_assoc($res1)){
+                    $temp=$row_img["path"];
+                    echo"<p>arquivo enviado</p>,<a href=\"$temp\"> mostrar imagem</a></p>";
+                    echo '<img  width="18%" height="20%" src="'.$row_img['path'].'">';
+                
+                
+                }
+            }
 
-?>
+        ?>
 
 </body>
 
