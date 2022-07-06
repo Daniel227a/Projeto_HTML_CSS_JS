@@ -45,6 +45,11 @@
         color: black;
     }
 
+    .pr {
+        display: flex;
+
+    }
+
     .caixa {
 
         color: rgb(0, 0, 0);
@@ -55,10 +60,10 @@
         border-top-right-radius: 30px;
         border-bottom-left-radius: 30px;
         border: 2px red inset;
-        ;
+
         display: inline-block;
 
-
+        float: right;
     }
 
     footer {
@@ -103,10 +108,12 @@
                 $res1=$conn->query($sql1);
                 while($row_img = mysqli_fetch_assoc($res1)){
                     $temp=$row_img["path"];
-                   // echo"<p>arquivo enviado</p>,<a href=\"$temp\"> mostrar imagem</a></p>";
+                    $postNome=$row_nome["nome"];
+                    
+                    
                     //echo"<br>";
                     echo 
-                    '<div>
+                    '<div >
                    
                         <div class="caixa">
                        
@@ -116,14 +123,21 @@
                                 Descriçao: "'.$row_nome["descriçao"].'"
                                 <br>
                                 inicio: "'.$row_nome["inicio"].'"
-                              
-                                <img  width="58%" height="20%" src="'.$row_img['path'].'" >
+                                <br>
+                                <img  width="58%" height="65%" src="'.$row_img['path'].'" >
+                                <p>arquivo enviado</p>,<a href='.$temp.'> mostrar imagem</a></p>
+                                <a href="info.php?nome='.$row_nome["nome"].'">
+                               
+                                <button type="submit"  >pagia</button>
+                             
+                             </a>
                             </center>
+                            
                         </div>
-                     
+                   
                     </div>
                   ';
-                  
+                 # <button type="submit" name ="p" value="'.$_SESSION["a"] = $postNome.'" >pagia</button>
                 
                 }
             }
