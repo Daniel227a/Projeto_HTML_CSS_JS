@@ -126,7 +126,7 @@
                                 <br>
                                 <img  width="58%" height="65%" src="'.$row_img['path'].'" >
                                 <p>arquivo enviado</p>,<a href='.$temp.'> mostrar imagem</a></p>
-                                <a href="info.php?nome='.$row_nome["nome"].'">
+                                <a href="info.php?nome='.$row_nome["nome"].'& id='.$row_nome["id"].'">
                                
                                 <button type="submit"  >pagia</button>
                              

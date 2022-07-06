@@ -68,6 +68,10 @@
     #grad {
         background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(2, 0, 0, 0.959));
     }
+
+    body {
+        background: rgba(255, 255, 255, 0.5)
+    }
     </style>
 </head>
 
