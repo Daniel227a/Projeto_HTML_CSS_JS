@@ -86,27 +86,25 @@
 </head>
 
 <body id="grad">
+
     <?php
-    $cont=1;
-            $elementos=4;
-            include("config.php");
-            //$i=0;
-           
-           
-            
-            $sql = "SELECT * FROM evento LIMIT $elementos";
-            $res=$conn->query($sql);
+include("config.php");
+
+    $pagina=$_GET['page'];
+    $quantide=4;
+    $sql = "SELECT * FROM evento LIMIT $pagina,$quantide";
+    $res=$conn->query($sql);
             if($res!=true){
                 print("ERRO");
 
             }
-            //print($res->num_rows);
+            print($res->num_rows);
            
-           $cont_page=intval($res->num_rows/$elementos)+1;
+           //$cont_page=intval($res->num_rows/$elementos)+1;
            
 
             while($row_nome = mysqli_fetch_assoc($res)){
-               // echo"<br>";
+                echo"<br>";
               //  echo"<br> nome: ".$row_nome["nome"];
                // echo"<br> Descriçao ".$row_nome["descriçao"];
                // echo"<br> inicio: ".$row_nome["inicio"];
@@ -149,16 +147,13 @@
                 
                 }
             }
-       
-        for($i=0;$i<$cont_page;$i++){
-           $elementos=$i*$elementos;
-            echo"<a href='paginas.php?page=$elementos'> $cont</a>";
-            $cont++;
 
-        }
-        
-     
-        ?>
+
+
+
+
+
+?>
 
     <div>
 

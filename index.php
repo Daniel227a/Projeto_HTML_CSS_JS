@@ -94,6 +94,7 @@
     include("config.php");
     $sql = "SELECT * FROM evento";
     $res=$conn->query($sql);
+    
     if($res->num_rows!=0){
         include("exibir.php");
     }
